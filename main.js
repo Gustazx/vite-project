@@ -134,7 +134,30 @@ const array = [1, 2, 3, 4, 5, 6];
 //   return typeof item !== "number";
 // });
 
-const par = array.find((item) => item % 2 === 0);
-const posicaoPar = array.findIndex((item) => item % 2 === 0);
+// const par = array.find((item) => item % 2 === 0);
+// const posicaoPar = array.findIndex((item) => item % 2 === 0);
 
-document.body.innerText = JSON.stringify(posicaoPar);
+// const soma = array.reduce((acc, item) => {
+//   return acc + item;
+// }, 0);
+
+// document.body.innerText = JSON.stringify(soma);
+
+// Template Literals
+
+// const name = "Gustavo";
+// const message = `Bem-vindo, ${name ? name : "Visitante"}`;
+
+// Promises
+
+const somaDoisNumeros = (a, b) => {
+  return new Promisse((resolve, reject) => {
+    setTimeout(() => {
+      resolve(a + b);
+    }, 2000);
+  });
+};
+
+somaDoisNumeros(1, 3).then((soma) => {
+  document.body.innerText = soma;
+});
