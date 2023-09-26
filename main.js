@@ -150,27 +150,13 @@ const array = [1, 2, 3, 4, 5, 6];
 
 // Promises
 
-fetch("https://api.github.com/users/Gustazx")
-  .then((response) => {
-    return response.json();
-  })
-  .then((body) => {
-    document.body.innerText = body;
-  });
-// .then((response) => {
-//   document.body.innerText = response.text().then((body) => {
-//     document.body.innerText = body;
+// const somaDoisNumeros = (a, b) => {
+//   return new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//       resolve(a + b);
+//     }, 2000);
 //   });
-// })
-//
-
-const somaDoisNumeros = (a, b) => {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      reject(a + b);
-    }, 2000);
-  });
-};
+// };
 
 // somaDoisNumeros(1, 3)
 //   .then((soma) => {
@@ -179,3 +165,38 @@ const somaDoisNumeros = (a, b) => {
 //   .catch((error) => {
 //     document.body.innerText = "Erro";
 //   });
+
+// .then/.catch
+
+// async function searchData() {
+//   try {
+//     const response = await fetch("https://api.github.com/users/Gustazx");
+//     const body = await response.json();
+//     return body.login;
+//   } catch (error) {
+//     console.log(error);
+//   } finally {
+//     console.log("deu");
+//   }
+// }
+// searchData().then((name) => {
+//   console.log(name);
+// });
+
+// Named export
+
+// import { soma, sub, PI } from "./lib/math.js"
+// import { sum } from "./lib/sum.js";
+// console.log(sum(1, 2));
+
+// console.log(soma(1, 5));
+// console.log(sub(1, 5));
+// console.log(PI);
+
+import { sub as tst } from "./lib/math.js";
+console.log(tst(1, 2));
+// import * as math from "./lib/math.js";
+
+// console.log(math.soma(1, 2));
+// console.log(math.sub(1, 2));
+// console.log(math.PI);
